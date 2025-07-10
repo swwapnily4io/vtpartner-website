@@ -75,9 +75,10 @@ const AddNewVehiclePage = () => {
     description: "",
     image: "",
     size_image: "",
-    minimum_waiting_time: "", // Default value
-    penalty_charge: "", // Default value
+    minimum_waiting_time: "",
+    penalty_charge: "",
     vehicle_map_image: "",
+    coin_reward_points: "",
   });
 
   const [errorVehicle, setVehicleErrors] = useState({
@@ -90,6 +91,7 @@ const AddNewVehiclePage = () => {
     minimum_waiting_time: false,
     penalty_charge: false,
     vehicle_map_image: false,
+    coin_reward_points: false,
   });
   const [vehicleTypes, setVehicleTypes] = useState([]);
   const [btnLoading, setBtnLoading] = useState(false);
@@ -261,6 +263,10 @@ const AddNewVehiclePage = () => {
       penalty_charge: !selectedVehicle.penalty_charge,
       vehicle_map_image:
         !imageMapFileSizeImage && !selectedVehicle.vehicle_map_image,
+      coin_reward_points:
+        selectedVehicle.coin_reward_points === "" ||
+        isNaN(selectedVehicle.coin_reward_points) ||
+        !Number.isInteger(Number(selectedVehicle.coin_reward_points)),
     };
     setVehicleErrors(newErrors);
 
@@ -389,6 +395,7 @@ const AddNewVehiclePage = () => {
           minimum_waiting_time: selectedVehicle.minimum_waiting_time,
           penalty_charge: selectedVehicle.penalty_charge,
           vehicle_map_image: vehicleMapImageUrl,
+          coin_reward_points: Number(selectedVehicle.coin_reward_points),
         },
         {
           headers: {
@@ -639,6 +646,7 @@ const AddNewVehiclePage = () => {
                             <th scope="col">Vehicle Type</th>
                             <th scope="col">Waiting Time</th>
                             <th scope="col">Penalty Charge</th>
+                            <th scope="col">Coin Reward</th>
                             <th scope="col">Actions</th>
                           </tr>
                         </thead>
@@ -682,6 +690,11 @@ const AddNewVehiclePage = () => {
                               <td>
                                 <p className="mb-0 f-s-12 text-secondary">
                                   ₹{vehicle.penalty_charge}/min
+                                </p>
+                              </td>
+                              <td>
+                                <p className="mb-0 f-s-12 text-secondary">
+                                  {vehicle.coin_reward_points} Coins
                                 </p>
                               </td>
 
@@ -884,6 +897,29 @@ const AddNewVehiclePage = () => {
               error={errorVehicle.penalty_charge}
               helperText={
                 errorVehicle.penalty_charge ? "Penalty charge is required." : ""
+              }
+            />
+            <TextField
+              label="Coin Rewards"
+              fullWidth
+              margin="normal"
+              name="coin_reward_points"
+              type="number"
+              value={selectedVehicle.coin_reward_points}
+              onChange={(e) => {
+                // Only allow whole numbers >= 0
+                const value = e.target.value.replace(/[^0-9]/g, "");
+                setSelectedVehicle((prev) => ({
+                  ...prev,
+                  coin_reward_points: value,
+                }));
+              }}
+              required
+              error={errorVehicle.coin_reward_points}
+              helperText={
+                errorVehicle.coin_reward_points
+                  ? "Coin Rewards is required and must be a whole number."
+                  : ""
               }
             />
             <TextField

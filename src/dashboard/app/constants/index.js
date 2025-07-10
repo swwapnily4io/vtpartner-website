@@ -5,9 +5,9 @@ let serverEndPoint, serverWebsiteEndPoint, serverEndPointImage;
 const devMode = 0; // Change this to 1 for development mode
 
 if (devMode === 1) {
-  serverEndPoint = "http://100.24.44.74:8000/api/dashboard";
-  serverWebsiteEndPoint = "http://100.24.44.74:8000/api/website";
-  serverEndPointImage = "http://100.24.44.74:8000/api/dashboard";
+  serverEndPoint = "http://44.203.96.86:8000/api/dashboard";
+  serverWebsiteEndPoint = "http://44.203.96.86:8000/api/website";
+  serverEndPointImage = "http://44.203.96.86:8000/api/dashboard";
 } else {
   serverEndPoint = "https://www.kaps9.in/api/dashboard";
   serverWebsiteEndPoint = "https://www.kaps9.in/api/website";

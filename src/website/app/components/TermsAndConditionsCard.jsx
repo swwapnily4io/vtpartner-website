@@ -20,12 +20,13 @@ const TermsAndConditionsCard = () => {
         <div className="mb-6">
           <p className="text-gray-700 text-sm leading-relaxed mb-2">
             These terms of service outline the rules and regulations for the use
-            of KASP TRANS PVT LTD Website. KASP TRANS PVT LTD is located at:
-            Plot No- PAP -A45 Near Mahindra gate no -02 CHAKAN MIDC Nighoje.,
-            Pune-410501 Maharashtra, India By accessing our website, we assume
-            you accept these terms of service in full. Do not continue to use
-            KASP TRANS PVT LTD's website if you do not accept all of the terms
-            of service stated on this page.
+            of KASP TRANS PVT LTD Website. KASP TRANS PVT LTD is located at: 3rd
+            Floor of Bridgetech Park B Block, Pattandur Agrahara village, K R
+            Puram Hobli, WhiteField Road, Banagaluru Karanataka -560066, India
+            By accessing our website, we assume you accept these terms of
+            service in full. Do not continue to use KASP TRANS PVT LTD's website
+            if you do not accept all of the terms of service stated on this
+            page.
             <br />
             <br />
             <strong>Location Data Usage:</strong>
@@ -42,32 +43,33 @@ const TermsAndConditionsCard = () => {
           <p className="text-gray-700 text-sm leading-relaxed">
             These terms of service outline the rules and regulations for the use
             of KASP TRANS PVT LTD's Website. KASP TRANS PVT LTD is located at:
-            Plot No- PAP -A45 Near Mahindra gate no -02 CHAKAN MIDC Nighoje.,
-            Pune-410501 Maharashtra, India By accessing our website, we assume
-            you accept these terms of service in full. Do not continue to use
-            KASP TRANS PVT LTD's website if you do not accept all of the terms
-            of service stated on this page.<br></br> The following terminology
-            applies to these Terms of Service, Privacy Statement and Disclaimer
-            Notice and any or all Agreements: "Client", "You" and "Your" refers
-            to you, the person accessing this website and accepting the
-            Company's terms of service. "The Company", "Ourselves", "We", "Our"
-            and "Us", refers to our Company. "Party", "Parties", or "Us", refers
-            to both the Client and ourselves, or either the Client or ourselves.
-            All terms refer to the offer, acceptance and consideration of
-            payment necessary to undertake the process of our assistance to the
-            Client in the most appropriate manner, whether by formal meetings of
-            a fixed duration, or any other means, for the express purpose of
-            meeting the Client's needs in respect of provision of the Company's
-            stated services/products, in accordance with and subject to,
-            prevailing law of India. Any use of the above terminology or other
-            words in the singular, plural, capitalisation and/or he/she or they,
-            are taken as interchangeable and therefore as referring to same.{" "}
-            <br></br>WE WOULD LIKE TO CLARIFY THAT THESE USER TERMS WILL NOT
-            APPLY TO CORPORATE ENTITIES WHO ARE GOVERNED BY THE KAPS CORPORATE
-            TERMS OF USE.HOWEVER ALL THE CUSTOMERS WHO ARE AVAILING SERVICES
-            LIKE OBTAINING A RIDE OR SHIFITING OF GOODS UNDER THE DIRECT
-            ARRANGEMENTS BETWEEN CORPORATE ENTITIES AND KAPS SHALL ALSO BE
-            GOVERNED BY THESE USER TERMS.
+            3rd Floor of Bridgetech Park B Block, Pattandur Agrahara village, K
+            R Puram Hobli, WhiteField Road, Banagaluru Karanataka -560066, India
+            By accessing our website, we assume you accept these terms of
+            service in full. Do not continue to use KASP TRANS PVT LTD's website
+            if you do not accept all of the terms of service stated on this
+            page.<br></br> The following terminology applies to these Terms of
+            Service, Privacy Statement and Disclaimer Notice and any or all
+            Agreements: "Client", "You" and "Your" refers to you, the person
+            accessing this website and accepting the Company's terms of service.
+            "The Company", "Ourselves", "We", "Our" and "Us", refers to our
+            Company. "Party", "Parties", or "Us", refers to both the Client and
+            ourselves, or either the Client or ourselves. All terms refer to the
+            offer, acceptance and consideration of payment necessary to
+            undertake the process of our assistance to the Client in the most
+            appropriate manner, whether by formal meetings of a fixed duration,
+            or any other means, for the express purpose of meeting the Client's
+            needs in respect of provision of the Company's stated
+            services/products, in accordance with and subject to, prevailing law
+            of India. Any use of the above terminology or other words in the
+            singular, plural, capitalisation and/or he/she or they, are taken as
+            interchangeable and therefore as referring to same. <br></br>WE
+            WOULD LIKE TO CLARIFY THAT THESE USER TERMS WILL NOT APPLY TO
+            CORPORATE ENTITIES WHO ARE GOVERNED BY THE KAPS CORPORATE TERMS OF
+            USE.HOWEVER ALL THE CUSTOMERS WHO ARE AVAILING SERVICES LIKE
+            OBTAINING A RIDE OR SHIFITING OF GOODS UNDER THE DIRECT ARRANGEMENTS
+            BETWEEN CORPORATE ENTITIES AND KAPS SHALL ALSO BE GOVERNED BY THESE
+            USER TERMS.
           </p>
         </div>
         {/* <div className="border-t border-gray-300"> */}
@@ -2117,12 +2119,13 @@ const TermsAndConditionsCard = () => {
                   <p className="text-gray-700 text-xs leading-6 pt-2">
                     <strong>KASP TRANS PVT LTD</strong>
                     <br />
-                    Plot No- PAP -A45 Near Mahindra gate no -02 CHAKAN MIDC
-                    Nighoje, Pune-410501
+                    3rd Floor of Bridgetech Park B Block, Pattandur Agrahara
+                    village, K R Puram Hobli, WhiteField Road, Banagaluru
+                    Karanataka -560066
                     <br />
-                    <strong>Email:</strong> info@KAPS.in
+                    <strong>Email:</strong> info@kaps9.in
                     <br />
-                    <strong>Phone:</strong> [+91-]
+                    <strong>Phone:</strong> [+91 9665141555]
                   </p>
                   <span className="font-semibold text-sm mt-4">
                     21. MISCELLANEOUS

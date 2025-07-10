@@ -44,17 +44,20 @@ import { toast } from "react-toastify";
 import { serverWebsiteEndPoint } from "../../../dashboard/app/constants";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import NewHeroBanner from "../components/new-components/NewHeroBanner";
 const Home = () => {
   return (
     <>
       <div className="bg-white text-black! lg:mt-[3.5rem] mt-[2.5rem]">
         {/* <NavbarNew /> */}
-        <HeroBanner />
-        <SliderCarousal />
-        <ShowcaseNumbers />
+        {/* <HeroBanner /> */}
+        <NewHeroBanner />
         <WhyChooseUs />
+        {/* <SliderCarousal /> */}
+        <ShowcaseNumbers />
+
         <OurLocations />
-        <HowItWorks />
+        {/* <HowItWorks /> */}
 
         {/* <OurServices /> */}
         <div className="relative z-0 bg-primary">

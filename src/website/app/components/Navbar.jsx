@@ -92,7 +92,7 @@ const Navbar = () => {
 
           {/* Desktop Contact Button */}
           <a
-            href="#contact"
+            href="/#contact"
             className="lg:block mr-4 hidden text-white bg-blue-500 rounded-md px-4 py-2 cursor-pointer   font-titillium"
           >
             Contact

@@ -1,0 +1,25 @@
+# ✅ Step 1: Copy from Mac to EC2 (scp command)Go to path where we do ssh to aws ec2 instance and execute this command to transfer files to tmp_html folder on ubuntu server
+
+scp -i "kaps-ec2-instance-key.pem" -r \
+googlec39365defd6140e1.html dist \
+ubuntu@ec2-44-203-96-86.compute-1.amazonaws.com:~/tmp_html
+
+# ✅ Step 2: SSH into your EC2 instance
+
+ssh -i "kaps-ec2-instance-key.pem" ubuntu@ec2-44-203-96-86.compute-1.amazonaws.com
+
+
+Then run:
+
+# Create the final target folder if it doesn't exist just remove # at start before executing the command
+#sudo mkdir -p /var/www/kaps9.in/html
+
+# Move files from tmp_html to the HTML folder
+sudo cp -r ~/tmp_html/* /var/www/kaps9.in/html/
+
+# Fix permissions
+sudo chown -R www-data:www-data /var/www/kaps9.in/html
+sudo chmod -R 755 /var/www/kaps9.in/html
+
+
+
