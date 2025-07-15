@@ -914,6 +914,15 @@ const AllGoodsDrivers = () => {
                                 >
                                   <i className="ti ti-wallet"></i>
                                 </Link>
+                                <Link
+                                  to={`/dashboard/goods-driver-rides-details/${driver.goods_driver_id}/${driver.driver_first_name}`}
+                                  role="button"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="btn btn-outline-primary icon-btn w-30 h-30 b-r-22 ms-2 me-2"
+                                >
+                                  <i className="ti ti-truck-delivery"></i>
+                                </Link>
                               </td>
                             </tr>
                           ))}

@@ -50,6 +50,7 @@ export const sidebarConfig = [
         name: "Agent Cancel Reasons",
         path: "/dashboard/agents-cancel-reasons",
       },
+      { name: "App Screens Controls", path: "/dashboard/app-screens-controls" },
       { name: "App Controls", path: "/dashboard/app-controls" },
       { name: "Query Controls", path: "/dashboard/query-controls" },
     ],

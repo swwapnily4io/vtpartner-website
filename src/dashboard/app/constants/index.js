@@ -2,7 +2,7 @@
 
 // Define the variables
 let serverEndPoint, serverWebsiteEndPoint, serverEndPointImage;
-const devMode = 0; // Change this to 1 for development mode
+const devMode = 1; // Change this to 1 for development mode
 
 if (devMode === 1) {
   serverEndPoint = "http://44.203.96.86:8000/api/dashboard";

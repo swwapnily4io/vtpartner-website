@@ -92,6 +92,10 @@ const GoodsOrderDetails = () => {
       status: "",
       price: "",
       rating: 0,
+      gst_no: "NA",
+      gst_address: "NA",
+      penalty_amount: 0.0,
+      wallet_amount_used: 0.0,
     },
   ]);
 
@@ -273,6 +277,12 @@ const GoodsOrderDetails = () => {
         drop_locations:
           bookingDetailsResponse.data.results[0]["drop_locations"],
         drop_contacts: bookingDetailsResponse.data.results[0]["drop_contacts"],
+        gst_no: bookingDetailsResponse.data.results[0]["gst_no"],
+        gst_address: bookingDetailsResponse.data.results[0]["gst_address"],
+        penalty_amount:
+          bookingDetailsResponse.data.results[0]["penalty_amount"],
+        wallet_amount_used:
+          bookingDetailsResponse.data.results[0]["wallet_amount_used"],
       });
 
       console.log("bookingDetails.customer_name::" + bookingDetails.ratings);
@@ -863,7 +873,9 @@ const GoodsOrderDetails = () => {
                                 <tr>
                                   <td>Penalty Charge :</td>
                                   <td className="text-end" id="cart-shipping">
-                                    ₹ 0.00
+                                    {bookingDetails.penalty_amount > 0
+                                      ? `₹${bookingDetails.penalty_amount}`
+                                      : "₹ 0.00"}
                                   </td>
                                 </tr>
                                 <tr>

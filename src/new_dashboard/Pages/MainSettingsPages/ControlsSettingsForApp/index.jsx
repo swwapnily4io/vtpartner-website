@@ -8,6 +8,11 @@ import {
   IconButton,
   Tooltip,
   Icon,
+  InputLabel,
+  FormControl,
+  Select,
+  MenuItem,
+  Chip,
 } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 import { toast, ToastContainer } from "react-toastify";
@@ -36,6 +41,49 @@ const ControlSettings = () => {
     controller_name: false,
     values: false,
   });
+
+  // Controller options with value type definitions
+  const controllerOptions = [
+    {
+      value: "PER_COIN_PRICE",
+      label: "Per Coin Price",
+      type: "number",
+      description: "Price per coin in currency",
+    },
+    {
+      value: "Agent Cancel Button Show",
+      label: "Agent Cancel Button Show",
+      type: "dropdown",
+      options: ["Yes", "No"],
+      description: "Show/hide cancel button for agents",
+    },
+    {
+      value: "Hike Price Show",
+      label: "Hike Price Show",
+      type: "dropdown",
+      options: ["Yes", "No"],
+      description: "Show/hide hike price feature",
+    },
+    {
+      value: "Agent Recharge Expiry Show",
+      label: "Agent Recharge Expiry Show",
+      type: "dropdown",
+      options: ["Yes", "No"],
+      description: "Show/hide recharge expiry for agents",
+    },
+    {
+      value: "Booking TimeOut",
+      label: "Booking Timeout (minutes)",
+      type: "number",
+      description: "Booking timeout duration in minutes",
+    },
+    {
+      value: "Multiple Drops",
+      label: "Multiple Drops",
+      type: "number",
+      description: "Maximum number of drop locations allowed",
+    },
+  ];
 
   useEffect(() => {
     fetchSettings();
@@ -93,6 +141,103 @@ const ControlSettings = () => {
       ...prev,
       [name]: value,
     }));
+  };
+
+  const getControllerType = (controllerName) => {
+    const controller = controllerOptions.find(
+      (opt) => opt.value === controllerName
+    );
+    return controller ? controller.type : "text";
+  };
+
+  const getControllerOptions = (controllerName) => {
+    const controller = controllerOptions.find(
+      (opt) => opt.value === controllerName
+    );
+    return controller ? controller.options : [];
+  };
+
+  const getControllerDescription = (controllerName) => {
+    const controller = controllerOptions.find(
+      (opt) => opt.value === controllerName
+    );
+    return controller ? controller.description : "";
+  };
+
+  const renderValueField = () => {
+    const controllerType = getControllerType(selectedSetting.controller_name);
+    const controllerOptions = getControllerOptions(
+      selectedSetting.controller_name
+    );
+
+    switch (controllerType) {
+      case "dropdown":
+        return (
+          <FormControl fullWidth margin="normal" variant="outlined">
+            <InputLabel>Values</InputLabel>
+            <Select
+              name="values"
+              value={selectedSetting.values}
+              onChange={handleInputChange}
+              required
+              label="Values"
+              error={errors.values}
+            >
+              {controllerOptions.map((option) => (
+                <MenuItem key={option} value={option}>
+                  {option}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        );
+
+      case "number":
+        return (
+          <TextField
+            label="Values"
+            name="values"
+            value={selectedSetting.values}
+            onChange={handleInputChange}
+            fullWidth
+            margin="normal"
+            type="number"
+            required
+            InputProps={{
+              inputProps: { min: 0 },
+            }}
+            error={errors.values}
+            helperText={errors.values ? "Values are required" : ""}
+          />
+        );
+
+      default:
+        return (
+          <TextField
+            label="Values"
+            name="values"
+            value={selectedSetting.values}
+            onChange={handleInputChange}
+            fullWidth
+            margin="normal"
+            multiline
+            rows={4}
+            required
+            error={errors.values}
+            helperText={errors.values ? "Values are required" : ""}
+          />
+        );
+    }
+  };
+
+  const getStatusChip = (value) => {
+    if (value === "Yes" || value === "YES") {
+      return <Chip label="Enabled" color="success" size="small" />;
+    } else if (value === "No" || value === "NO") {
+      return <Chip label="Disabled" color="error" size="small" />;
+    } else {
+      return <Chip label={value} color="default" size="small" />;
+    }
   };
 
   const handleSubmit = async () => {
@@ -220,13 +365,14 @@ const ControlSettings = () => {
                               <h6 className="mb-0 f-s-16">
                                 {setting.controller_name}
                               </h6>
+                              <p className="mb-0 f-s-12 text-secondary">
+                                {getControllerDescription(
+                                  setting.controller_name
+                                )}
+                              </p>
                             </div>
                           </td>
-                          <td>
-                            <p className="mb-0 f-s-12 text-secondary">
-                              {setting.values}
-                            </p>
-                          </td>
+                          <td>{getStatusChip(setting.values)}</td>
                           <td>
                             <p className="mb-0 f-s-12 text-secondary">
                               {format(
@@ -255,7 +401,7 @@ const ControlSettings = () => {
         </Row>
       </Container>
 
-      {/* Dialog remains the same */}
+      {/* Enhanced Dialog */}
       <Dialog
         open={openDialog}
         onClose={handleCloseDialog}
@@ -267,31 +413,35 @@ const ControlSettings = () => {
             {isEditMode ? "Edit Setting" : "Add New Setting"}
           </Typography>
 
-          <TextField
-            label="Controller Name"
-            name="controller_name"
-            value={selectedSetting.controller_name}
-            onChange={handleInputChange}
-            fullWidth
-            margin="normal"
-            error={errors.controller_name}
-            helperText={
-              errors.controller_name ? "Controller name is required" : ""
-            }
-          />
+          <FormControl fullWidth margin="normal" variant="outlined">
+            <InputLabel>Controller Name</InputLabel>
+            <Select
+              name="controller_name"
+              value={selectedSetting.controller_name}
+              onChange={handleInputChange}
+              required
+              label="Controller Name"
+              error={errors.controller_name}
+            >
+              {controllerOptions.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
 
-          <TextField
-            label="Values"
-            name="values"
-            value={selectedSetting.values}
-            onChange={handleInputChange}
-            fullWidth
-            margin="normal"
-            multiline
-            rows={4}
-            error={errors.values}
-            helperText={errors.values ? "Values are required" : ""}
-          />
+          {selectedSetting.controller_name && (
+            <Typography
+              variant="caption"
+              color="textSecondary"
+              sx={{ mb: 1, display: "block" }}
+            >
+              {getControllerDescription(selectedSetting.controller_name)}
+            </Typography>
+          )}
+
+          {renderValueField()}
 
           <Box mt={2} display="flex" justifyContent="flex-end">
             <Button onClick={handleCloseDialog} sx={{ marginRight: 1 }}>
@@ -313,4 +463,4 @@ const ControlSettings = () => {
   );
 };
 
-export default ControlSettings;
+export default ControlSettings; 

@@ -123,6 +123,9 @@ import Enquiries from "../Pages/EstimationsRequest/AllAgentsRequest";
 import QueryControlSettings from "../Pages/MainSettingsPages/QueryControlSettingsPanel";
 import AgentsCancelReasons from "../Pages/MainSettingsPages/DriverCancelReasons";
 import PeakHourPincodeWisePricing from "../Pages/MainSettingsPages/PeakHoursPincodeWise";
+import AppContentDashboardScreen from "../Pages/MainSettingsPages/AppContent_ControlsPage";
+import GoodsDriverAllRides from "../Components/Admindashboard/AllGoodsDrivers/GoodsDriverAllRidesDetails";
+import CustomerAllRides from "../Components/CustomersAllRides";
 // DashboardRoutes
 // const GoodsDriversHome = React.lazy(() =>
 //   import("@/Pages/Dashboard/GoodsDriversHome")
@@ -282,6 +285,10 @@ const Routes = () => {
           element: <AllGoodsDrivers />,
         },
         {
+          path: "/dashboard/goods-driver-rides-details/:driverId/:driverName",
+          element: <GoodsDriverAllRides />,
+        },
+        {
           path: "/dashboard/all-cab-drivers",
           element: <AllCabDrivers />,
         },
@@ -352,6 +359,10 @@ const Routes = () => {
         {
           path: "/dashboard/agents-cancel-reasons",
           element: <AgentsCancelReasons />,
+        },
+        {
+          path: "/dashboard/app-screens-controls",
+          element: <AppContentDashboardScreen />,
         },
         {
           path: "/dashboard/app-controls",
@@ -545,8 +556,12 @@ const Routes = () => {
       element: <HandymanWallet />,
     },
     {
-      path: "/dashboard/customer-wallet-details/:customerID/:customerName",
+      path: "/dashboard/customer-wallet-details/:customerId/:customerName",
       element: <CustomerWallet />,
+    },
+    {
+      path: "/dashboard/customer-rides/:customerId/:customerName",
+      element: <CustomerAllRides />,
     },
     {
       path: "/goods-booking-details/:booking_id",

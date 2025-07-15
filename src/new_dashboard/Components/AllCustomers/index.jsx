@@ -192,6 +192,15 @@ const AllCustomers = () => {
                           >
                             <i className="ti ti-wallet"></i>
                           </Link>
+                          <Link
+                            to={`/dashboard/customer-rides/${customer.customer_id}/${customer.customer_name}`}
+                            role="button"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-outline-primary icon-btn w-30 h-30 b-r-22 ms-2 me-2"
+                          >
+                            <i className="ti ti-truck-delivery"></i>
+                          </Link>
                         </td>
                         {/* <td>
                           <Link
