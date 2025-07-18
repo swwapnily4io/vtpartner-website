@@ -32,9 +32,9 @@ const Contact = () => {
         "template_if6ekvk",
         {
           from_name: form.name,
-          to_name: "Shaheed",
+          to_name: "Kaps Trans Pvt. Ltd",
           from_email: form.email,
-          to_email: "uniquesoftwaressolutions@gmail.com",
+          to_email: "kapstrans36@gmail.com",
           message: form.message,
         },
         "g9oBcUzNWPK8Bhman"
