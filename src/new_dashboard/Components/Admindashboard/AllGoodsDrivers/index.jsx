@@ -878,7 +878,17 @@ const AllGoodsDrivers = () => {
                                   <i className="ti ti-eye"></i>
                                 </Link>
                               </td> */}
+
                               <td>
+                                <Link
+                                  to={`/dashboard/driver-ratings/${driver.goods_driver_id}/${driver.driver_first_name}`}
+                                  role="button"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="btn btn-outline-warning icon-btn w-30 h-30 b-r-22 me-2"
+                                >
+                                  <i className="ti ti-star"></i>
+                                </Link>
                                 <Link
                                   to={`/dashboard/goods-driver-profile-details/${driver.goods_driver_id}`}
                                   role="button"

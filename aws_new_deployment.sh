@@ -8,7 +8,7 @@ set -e
 
 # Configuration
 KEY_FILE="kaps-ec2-instance-key.pem"
-EC2_HOST="ubuntu@ec2-100-24-44-74.compute-1.amazonaws.com"
+EC2_HOST="ubuntu@ec2-44-203-96-86.compute-1.amazonaws.com"
 REMOTE_DIR="/var/www/kaps9.in/html"
 LOCAL_BUILD_DIR="./dist"
 

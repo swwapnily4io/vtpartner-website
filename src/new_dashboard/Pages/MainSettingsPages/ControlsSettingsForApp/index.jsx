@@ -51,6 +51,18 @@ const ControlSettings = () => {
       description: "Price per coin in currency",
     },
     {
+      value: "SIGN_UP_BONUS_CUSTOMER_APP",
+      label: "Sign Up Bonus Customer App",
+      type: "number",
+      description: "sign up bonus for customers in the app in rupees",
+    },
+    {
+      value: "SIGN_UP_BONUS_AGENT_APP",
+      label: "Sign Up Bonus Agent App",
+      type: "number",
+      description: "sign up bonus for agent in the app in rupees",
+    },
+    {
       value: "Agent Cancel Button Show",
       label: "Agent Cancel Button Show",
       type: "dropdown",

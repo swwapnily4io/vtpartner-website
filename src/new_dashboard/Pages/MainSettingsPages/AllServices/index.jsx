@@ -24,6 +24,7 @@ import {
   Icon,
   Avatar,
   Tooltip,
+  Switch,
 } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 import { toast } from "react-toastify";
@@ -91,6 +92,56 @@ const AllServicesPage = () => {
     epoch: false,
     description: false,
   });
+
+  const [cityStatusDialogOpen, setCityStatusDialogOpen] = useState(false);
+  const [selectedServiceForCity, setSelectedServiceForCity] = useState(null);
+  const [serviceCities, setServiceCities] = useState([]);
+  const [cityStatusLoading, setCityStatusLoading] = useState(false);
+
+  const fetchServiceCities = async (category_id) => {
+    setCityStatusLoading(true);
+    const token = Cookies.get("authToken");
+    try {
+      const response = await axios.post(
+        `${serverEndPoint}/get_service_city_status`,
+        { category_id },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      setServiceCities(response.data.cities || []);
+    } catch (error) {
+      toast.error("Failed to fetch city status");
+    } finally {
+      setCityStatusLoading(false);
+    }
+  };
+
+  const handleOpenCityStatusDialog = (service) => {
+    setSelectedServiceForCity(service);
+    setCityStatusDialogOpen(true);
+    fetchServiceCities(service.category_id);
+  };
+
+  const handleCloseCityStatusDialog = () => {
+    setCityStatusDialogOpen(false);
+    setSelectedServiceForCity(null);
+    setServiceCities([]);
+  };
+
+  const handleToggleCityStatus = async (category_id, city_id, newStatus) => {
+    const token = Cookies.get("authToken");
+    try {
+      await axios.post(
+        `${serverEndPoint}/set_service_city_status`,
+        { category_id, city_id, status: newStatus ? 1 : 0 },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      // Refresh city list after update
+      fetchServiceCities(category_id);
+      toast.success("Status updated!");
+    } catch (error) {
+      toast.error("Failed to update status");
+    }
+  };
 
   const handleWebsiteBackgroundChange = (e) => {
     const file = e.target.files[0];
@@ -556,6 +607,15 @@ const AllServicesPage = () => {
                                     <Icon color="primary">edit</Icon>
                                   </IconButton>
                                 </Tooltip>
+                                <Tooltip title="Manage City Status" arrow>
+                                  <IconButton
+                                    onClick={() =>
+                                      handleOpenCityStatusDialog(service)
+                                    }
+                                  >
+                                    <Icon color="primary">location_city</Icon>
+                                  </IconButton>
+                                </Tooltip>
                                 <Tooltip title="Gallery" arrow>
                                   <IconButton
                                     onClick={() => goToGallery(service)}
@@ -623,6 +683,62 @@ const AllServicesPage = () => {
             </Card>
           </Col>
         </Row>
+
+        {/* edit citywise  */}
+        <Dialog
+          open={cityStatusDialogOpen}
+          onClose={handleCloseCityStatusDialog}
+          maxWidth="md"
+          fullWidth
+        >
+          <Box p={3}>
+            <Typography variant="h6" gutterBottom>
+              Manage City Status for: {selectedServiceForCity?.category_name}
+            </Typography>
+            {cityStatusLoading ? (
+              <CircularProgress />
+            ) : (
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>City Name</TableCell>
+                    <TableCell>Pincode</TableCell>
+                    <TableCell>Status</TableCell>
+                    <TableCell>Toggle</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {serviceCities.map((city) => (
+                    <TableRow key={city.city_id}>
+                      <TableCell>{city.city_name}</TableCell>
+                      <TableCell>{city.pincode}</TableCell>
+                      <TableCell>
+                        {city.service_status === 1 ? "Active" : "Inactive"}
+                      </TableCell>
+                      <TableCell>
+                        <Switch
+                          checked={city.service_status === 1}
+                          onChange={() =>
+                            handleToggleCityStatus(
+                              selectedServiceForCity.category_id,
+                              city.city_id,
+                              city.service_status === 0
+                            )
+                          }
+                          color="primary"
+                        />
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            )}
+            <Box mt={2} display="flex" justifyContent="flex-end">
+              <Button onClick={handleCloseCityStatusDialog}>Close</Button>
+            </Box>
+          </Box>
+        </Dialog>
+
         {/* Modal for Adding or Editing Vehicle */}
         <Dialog
           open={openServicesDialog}

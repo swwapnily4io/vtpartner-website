@@ -126,6 +126,8 @@ import PeakHourPincodeWisePricing from "../Pages/MainSettingsPages/PeakHoursPinc
 import AppContentDashboardScreen from "../Pages/MainSettingsPages/AppContent_ControlsPage";
 import GoodsDriverAllRides from "../Components/Admindashboard/AllGoodsDrivers/GoodsDriverAllRidesDetails";
 import CustomerAllRides from "../Components/CustomersAllRides";
+import VehicleGuidelinesPage from "../Components/Admindashboard/AllGoodsDrivers/AllVehicleWiseGuidelines";
+import DriverRatingsPage from "../Components/Admindashboard/AllGoodsDrivers/GoodsDriverRatings";
 // DashboardRoutes
 // const GoodsDriversHome = React.lazy(() =>
 //   import("@/Pages/Dashboard/GoodsDriversHome")
@@ -285,6 +287,10 @@ const Routes = () => {
           element: <AllGoodsDrivers />,
         },
         {
+          path: "/dashboard/driver-ratings/:driver_id/:driver_name",
+          element: <DriverRatingsPage />,
+        },
+        {
           path: "/dashboard/goods-driver-rides-details/:driverId/:driverName",
           element: <GoodsDriverAllRides />,
         },
@@ -415,6 +421,10 @@ const Routes = () => {
         {
           path: "/dashboard/all_vehicles/:category_id/:category_name",
           element: <AddNewVehiclePage />,
+        },
+        {
+          path: "/dashboard/vehicle-guidelines/:vehicle_id/:vehicle_name",
+          element: <VehicleGuidelinesPage />,
         },
         {
           path: "/dashboard/vehicle-upgrade-prices/:vehicleId/:vehicleName",

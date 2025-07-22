@@ -1,3 +1,4 @@
+This was just for demo purpose use aws_new_deployment.sh to deply
 # ✅ Step 1: Copy from Mac to EC2 (scp command)Go to path where we do ssh to aws ec2 instance and execute this command to transfer files to tmp_html folder on ubuntu server
 
 scp -i "kaps-ec2-instance-key.pem" -r \
