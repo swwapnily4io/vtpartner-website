@@ -17,34 +17,36 @@ const FareEstimateResultCard = ({
   fare,
   capacity,
 }) => {
-  return (
-    <div className="p-4 border border-secondary rounded-lg shadow-lg bg-white m-4">
-      <div className="flex justify-between items-center">
-        <div className="flex items-center gap-1">
-          <img
-            src={vehicleImage}
-            alt={vehicleName}
-            className="w-24 h-16 object-contain text-black"
-          />
-          <div className="ml-6">
-            <p className="text-lg text-black font-semibold">{vehicleName}</p>
-            <p className="text-black font-sans">
-              ₹{fare}- ₹{fare + 35}
-            </p>
-          </div>
-        </div>
+ return (
+   <div className="p-3 sm:p-4 border border-secondary rounded-lg shadow-lg bg-white mx-2 sm:mx-4 mb-3 sm:mb-4 mt-4 sm:mt-1">
+     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0">
+       <div className="flex items-center gap-2 sm:gap-1 w-full sm:w-auto">
+         <img
+           src={vehicleImage}
+           alt={vehicleName}
+           className="w-16 h-12 sm:w-24 sm:h-16 object-contain text-black flex-shrink-0"
+         />
+         <div className="ml-2 sm:ml-6 flex-1 min-w-0">
+           <p className="text-base sm:text-lg text-black font-semibold truncate">
+             {vehicleName}
+           </p>
+           <p className="text-sm sm:text-base text-black font-sans">
+             ₹{fare}- ₹{fare + 35}
+           </p>
+         </div>
+       </div>
 
-        <div className="mt-2">
-          {capacity > 0 && ( // Only render if capacity is greater than 0
-            <div className="flex items-center">
-              <FaWeightScale />
-              <p className="ml-2 text-sm text-black">{capacity} Kg</p>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
+       <div className="flex items-center justify-end w-full sm:w-auto sm:mt-2">
+         {capacity > 0 && ( // Only render if capacity is greater than 0
+           <div className="flex items-center">
+             <FaWeightScale className="text-sm sm:text-base" />
+             <p className="ml-2 text-xs sm:text-sm text-black">{capacity} Kg</p>
+           </div>
+         )}
+       </div>
+     </div>
+   </div>
+ );
 };
 
 const FareEstimateResults = () => {

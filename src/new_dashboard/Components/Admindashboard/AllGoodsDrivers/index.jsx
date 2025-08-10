@@ -1620,6 +1620,7 @@ const AllGoodsDrivers = () => {
                             <th>Driver ID</th>
                             <th scope="col">Driver Name</th>
                             <th scope="col">Last Location Address</th>
+                            <th scope="col">Vehicle Details</th>
                             <th scope="col">Status</th>
                             <th scope="col">Actions</th>
                           </tr>
@@ -1655,6 +1656,27 @@ const AllGoodsDrivers = () => {
                                     ? driver.address
                                     : "Fetching..."}
                                 </p>
+                              </td>
+
+                              <td>
+                                <div className="position-relative">
+                                  {/* <div className="h-40 w-40 d-flex-center b-r-15 overflow-hidden p-1 position-absolute">
+                                    <img
+                                      src={driver.driver_vehicle_image}
+                                      alt={driver.vehicle_name}
+                                      className="img-fluid"
+                                    />
+                                  </div> */}
+                                  <div className="ms-0">
+                                    <h6 className="mb-0 f-s-16">
+                                      {driver.vehicle_name} {" | "}{" "}
+                                      {driver.vehicle_plate_no}
+                                    </h6>
+                                    <p className="mb-0 f-s-14 text-secondary">
+                                      {driver.vehicle_fuel_type}
+                                    </p>
+                                  </div>
+                                </div>
                               </td>
 
                               <td>

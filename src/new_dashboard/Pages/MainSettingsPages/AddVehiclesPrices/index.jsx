@@ -663,7 +663,7 @@ const AddVehiclePricesPage = () => {
               </>
             )}
 
-            <TextField
+            {/* <TextField
               label="Minimum Time In Minutes [Ex: 15]"
               fullWidth
               margin="normal"
@@ -677,7 +677,7 @@ const AddVehiclePricesPage = () => {
                   ? "Minimum Time in Minutes is required."
                   : ""
               }
-            />
+            /> */}
 
             <Box mt={2} display="flex" justifyContent="flex-end">
               <Button onClick={handleCloseDialog} sx={{ marginRight: 1 }}>

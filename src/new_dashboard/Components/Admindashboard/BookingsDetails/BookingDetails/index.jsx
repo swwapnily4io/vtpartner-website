@@ -622,6 +622,30 @@ const GoodsBookingDetails = () => {
               </Col>
             </Row>
 
+            {bookingDetails.cancelled_reason &&
+              bookingDetails.cancelled_reason !== "NA" && (
+                <Row>
+                  <Col lg={12}>
+                    <Card className="order-details-card shadow-lg border-0">
+                      <CardHeader>
+                        <h5 className="text-nowrap">Cancel Reason</h5>
+                      </CardHeader>
+                      <CardBody>
+                        <div className="d-flex justify-content-between">
+                          <h6 className="f-w-600 text-dark">
+                            <i className="ti ti-map-pin f-s-18 me-2 text-secondary"></i>
+                            Reason
+                          </h6>
+                          <div className="text-end">
+                            <p>{bookingDetails.cancelled_reason}</p>
+                          </div>
+                        </div>
+                      </CardBody>
+                    </Card>
+                  </Col>
+                </Row>
+              )}
+
             <Row>
               <Col lg={12}>
                 <Card className="order-details-card shadow-lg border-0">
