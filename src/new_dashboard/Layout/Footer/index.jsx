@@ -10,7 +10,7 @@ const Footer = () => {
             <ul className="footer-text">
               <li>
                 <p className="mb-0">
-                  Copyright © 2025 Shaheed Maniyar. All rights reserved 💖
+                  Copyright © 2025 Kaps Trans Pvt Ltd All rights reserved.
                 </p>
               </li>
               <li>
