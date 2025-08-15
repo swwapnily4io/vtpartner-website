@@ -142,7 +142,7 @@ const AdminLoginPage = () => {
                   <div className="mb-3 text-center">
                     <h3>Login to your Account</h3>
                     <p className="f-s-12 text-secondary mt-2">
-                      Experience the all-new KASP Dashboard, designed to provide
+                      Experience the all-new KAPS Dashboard, designed to provide
                       you with enhanced precision and seamless control over your
                       operations.
                     </p>

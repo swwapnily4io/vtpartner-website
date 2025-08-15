@@ -13,9 +13,9 @@ const BannerMoreDetails = () => {
         <div className="container mx-auto">
           <div className="block">
             <div className="text-center">
-              <h1 className="text-3xl font-titillium mb-4">Welcome to KASP</h1>
+              <h1 className="text-3xl font-titillium mb-4">Welcome to KAPS</h1>
               <p className="text-gray-700 mb-6">
-                At KASP, we are dedicated to delivering exceptional service
+                At KAPS, we are dedicated to delivering exceptional service
                 across all our offerings, ensuring a hassle-free experience for
                 our customers in goods delivery, transportation, and essential
                 vendor services.

@@ -13,18 +13,18 @@ const TermsAndConditionsCard = () => {
       <div className="container mx-auto px-4">
         <div className="mb-8">
           <h2 className="sm:text-3xl text-lg font-titillium text-gray-800">
-            Welcome to KASP TRANS PVT LTD
+            Welcome to KAPS TRANS PVT LTD
           </h2>
         </div>
 
         <div className="mb-6">
           <p className="text-gray-700 text-sm leading-relaxed mb-2">
             These terms of service outline the rules and regulations for the use
-            of KASP TRANS PVT LTD Website. KASP TRANS PVT LTD is located at: 3rd
+            of KAPS TRANS PVT LTD Website. KAPS TRANS PVT LTD is located at: 3rd
             Floor of Bridgetech Park B Block, Pattandur Agrahara village, K R
             Puram Hobli, WhiteField Road, Banagaluru Karanataka -560066, India
             By accessing our website, we assume you accept these terms of
-            service in full. Do not continue to use KASP TRANS PVT LTD's website
+            service in full. Do not continue to use KAPS TRANS PVT LTD's website
             if you do not accept all of the terms of service stated on this
             page.
             <br />
@@ -42,11 +42,11 @@ const TermsAndConditionsCard = () => {
           </p>
           <p className="text-gray-700 text-sm leading-relaxed">
             These terms of service outline the rules and regulations for the use
-            of KASP TRANS PVT LTD's Website. KASP TRANS PVT LTD is located at:
+            of KAPS TRANS PVT LTD's Website. KAPS TRANS PVT LTD is located at:
             3rd Floor of Bridgetech Park B Block, Pattandur Agrahara village, K
             R Puram Hobli, WhiteField Road, Banagaluru Karanataka -560066, India
             By accessing our website, we assume you accept these terms of
-            service in full. Do not continue to use KASP TRANS PVT LTD's website
+            service in full. Do not continue to use KAPS TRANS PVT LTD's website
             if you do not accept all of the terms of service stated on this
             page.<br></br> The following terminology applies to these Terms of
             Service, Privacy Statement and Disclaimer Notice and any or all
@@ -1695,7 +1695,7 @@ const TermsAndConditionsCard = () => {
                           <li>
                             The rates for vehicle rentals and other services may
                             be subject to regular updates and modifications at
-                            the discretion of KASP Trans Pvt Ltd. Any changes
+                            the discretion of KAPS Trans Pvt Ltd. Any changes
                             will be communicated promptly to users via the app,
                             notifications, or other appropriate channels.
                           </li>
@@ -1948,7 +1948,7 @@ const TermsAndConditionsCard = () => {
                       unfavorably on us or our accredited businesses; (b) the
                       organization does not have an unsatisfactory record with
                       us; (c) the benefit to us from the visibility associated
-                      with the hyperlink outweighs the absence of KASP TRANS PVT
+                      with the hyperlink outweighs the absence of KAPS TRANS PVT
                       LTD; and (d) where the link is in the context of general
                       resource information or is consistent with editorial
                       content in a newsletter or similar product furthering the
@@ -1986,7 +1986,7 @@ const TermsAndConditionsCard = () => {
                       </li>
                     </ul>
                     <p className="pt-2">
-                      No use of KASP TRANS PVT LTD's logo or other artwork will
+                      No use of KAPS TRANS PVT LTD's logo or other artwork will
                       be allowed for linking absent a trademark license
                       agreement.
                     </p>
@@ -2117,7 +2117,7 @@ const TermsAndConditionsCard = () => {
                     App, or our services, please contact us at:
                   </p>
                   <p className="text-gray-700 text-xs leading-6 pt-2">
-                    <strong>KASP TRANS PVT LTD</strong>
+                    <strong>KAPS TRANS PVT LTD</strong>
                     <br />
                     3rd Floor of Bridgetech Park B Block, Pattandur Agrahara
                     village, K R Puram Hobli, WhiteField Road, Banagaluru

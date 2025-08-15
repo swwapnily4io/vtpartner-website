@@ -445,28 +445,28 @@ const GoodsDriverInvoiceDetails = () => {
                   <h3 className="text-gray-400 text-lg">Declaration</h3>
                   <ul>
                     <li className="text-gray-400 text-sm mb-2">
-                      1. Nature of Service: KASP is a transport service platform
+                      1. Nature of Service: KAPS is a transport service platform
                       that connects customers with independent drivers for goods
                       delivery services. We act solely as an intermediary and do
                       not own, operate, or control any vehicles or drivers.
                     </li>
                     <li className="text-gray-400 text-sm mb-2">
                       2. Liability: While we strive to connect you with reliable
-                      drivers, KASP does not assume responsibility for the
+                      drivers, KAPS does not assume responsibility for the
                       quality, condition, or timely delivery of goods by the
                       drivers.
                     </li>
                     <li className="text-gray-400 text-sm mb-2">
                       3. Contractual Relationship: When booking a delivery
                       service, the contract is between the customer and the
-                      driver. KASP facilitates this connection but is not a
+                      driver. KAPS facilitates this connection but is not a
                       party to the contract.
                     </li>
                   </ul>
                 </div>
                 <div className="mt-10">
                   <h3 className="text-black text-lg">
-                    KASP TRANS PRIVATE LIMITED
+                    KAPS TRANS PRIVATE LIMITED
                   </h3>
                   <p className="text-gray-500 mb-2">
                     {" "}

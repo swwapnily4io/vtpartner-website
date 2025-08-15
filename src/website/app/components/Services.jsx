@@ -49,7 +49,7 @@ const Services = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        At KASP, we are committed to providing a wide range of reliable and
+        At KAPS, we are committed to providing a wide range of reliable and
         efficient services to meet your everyday needs. Whether you're looking
         for Goods Delivery, Cab Booking, or heavy machinery like JCB and Crane
         Booking, we’ve got you covered. Our services also extend to expert
