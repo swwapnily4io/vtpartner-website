@@ -90,7 +90,7 @@ const ServiceDetails = () => {
       {/* Section Heading */}
       <div className="text-center mb-8">
         <h2 className="sm:text-2xl text-lg font-semibold text-black">
-          {service.category_name} Service from KASP
+          {service.category_name} Service from KAPS
         </h2>
       </div>
 

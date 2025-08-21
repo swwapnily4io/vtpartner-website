@@ -29,7 +29,12 @@ const FareEstimateQr = () => {
                 loading="lazy"
               />
             </Button>
-            <Button component="a" href="" target="_blank" sx={{ ml: 2 }}>
+            <Button
+              component="a"
+              href="https://apps.apple.com/in/app/kapsz/id6746477405"
+              target="_blank"
+              sx={{ ml: 2 }}
+            >
               <img
                 src="/assets/images/app_store.png"
                 alt="App Store"

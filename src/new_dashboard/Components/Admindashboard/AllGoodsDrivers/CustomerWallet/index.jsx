@@ -105,7 +105,7 @@ const CustomerWalletDetails = () => {
         key: RAZORPAY_KEY_ID,
         amount: amount * 100,
         currency: "INR",
-        name: "KASP",
+        name: "KAPS",
         description: "Wallet Recharge",
         order_id: orderResponse.data.order_id,
         handler: async function (response) {

@@ -731,6 +731,21 @@ const AddNewVehiclePage = () => {
                                     <UpgradeIcon color="gray" />
                                   </IconButton>
                                 </Tooltip>
+                                <Tooltip title="Manage Guidelines" arrow>
+                                  <IconButton
+                                    onClick={() =>
+                                      navigate(
+                                        `/dashboard/vehicle-guidelines/${
+                                          vehicle.vehicle_id
+                                        }/${encodeURIComponent(
+                                          vehicle.vehicle_name
+                                        )}`
+                                      )
+                                    }
+                                  >
+                                    <Icon color="info">list_alt</Icon>
+                                  </IconButton>
+                                </Tooltip>
                               </td>
                             </tr>
                           ))}

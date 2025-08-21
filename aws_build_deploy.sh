@@ -7,6 +7,9 @@ npm run build
 # Allow the ssh
 chmod 400 "kaps-ec2-instance-key.pem"
 
+#If Permission Denied run this on ec2 instance
+#sudo chown -R ubuntu:ubuntu /var/www/kaps9.in/html
+
 # Copy files to EC2
 scp -i "kaps-ec2-instance-key.pem" -r ./dist/* ubuntu@ec2-100-24-44-74.compute-1.amazonaws.com:/var/www/kaps9.in/html
 

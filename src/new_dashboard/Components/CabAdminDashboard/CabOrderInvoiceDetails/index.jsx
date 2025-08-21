@@ -273,7 +273,7 @@ const CabInvoiceDetails = () => {
                   <h3 className="text-gray-400 text-lg">Declaration</h3>
                   <ul>
                     <li className="text-gray-400 text-sm mb-2">
-                      1. Nature of Service: KASP is a cab service platform that
+                      1. Nature of Service: KAPS is a cab service platform that
                       connects customers with verified drivers. We act as an
                       intermediary to facilitate safe and reliable
                       transportation services.
@@ -295,7 +295,7 @@ const CabInvoiceDetails = () => {
 
                 <div className="mt-10">
                   <h3 className="text-black text-lg">
-                    KASP TRANS PRIVATE LIMITED
+                    KAPS TRANS PRIVATE LIMITED
                   </h3>
                   <p className="text-gray-500 mb-2">
                     Plot No.pap-a-45, Chakan, Midc Ph-iv, Nighoje, Khed, Nighoje

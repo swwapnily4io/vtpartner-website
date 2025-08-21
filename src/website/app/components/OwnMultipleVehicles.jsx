@@ -20,7 +20,7 @@ const OwnMultipleVehicles = () => {
           </h3>
           <p className="text-gray-700 mb-6 mr-10">
             Keeping track of your vehicle fleet and optimizing their efficiency
-            can be a huge challenge. Partner with KASP to boost your earnings
+            can be a huge challenge. Partner with KAPS to boost your earnings
             and manage your vehicles easily.
           </p>
           <a

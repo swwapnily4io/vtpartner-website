@@ -356,6 +356,7 @@ const AppContentDashboardScreen = () => {
         "image/png",
         "image/jpeg",
         "image/jpg",
+        "image/gif",
         "image/svg+xml",
       ];
 
@@ -738,7 +739,7 @@ const AppContentDashboardScreen = () => {
                 errorContent.image_url
                   ? "Image is required."
                   : imageError
-                  ? "Invalid file format. Only .png, .jpeg, .jpg, and .svg are allowed."
+                  ? "Invalid file format. Only .png, .jpeg, .jpg,.gif and .svg are allowed."
                   : imageSizeError
                   ? "Image dimensions do not match requirements."
                   : ""

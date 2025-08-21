@@ -59,7 +59,7 @@ const AllRegionsCovered = () => {
     pincode_until: false,
     description: false,
     bg_image: false,
-    base_price: false,
+    // base_price: false,
     outstation_distance: false,
   });
   const [openDialog, setOpenDialog] = useState(false);
@@ -71,7 +71,7 @@ const AllRegionsCovered = () => {
     description: "",
     bg_image: "", // To store the image URL
     status: "",
-    base_price: "",
+    // base_price: "",
     outstation_distance: "",
   });
   const [isAddingNewCity, setIsAddingNewCity] = useState(false); // For differentiating between add/edit mode
@@ -83,7 +83,7 @@ const AllRegionsCovered = () => {
     pincode: false,
     pincode_until: false,
     description: false,
-    base_price: false,
+    // base_price: false,
     outstation_distance: false,
   });
   const cityNameRegex = /^[a-zA-Z\s]+$/; // Only letters and spaces
@@ -100,7 +100,7 @@ const AllRegionsCovered = () => {
       description: city.description || "",
       bg_image: city.bg_image || "", // Set the initial image URL
       status: parseInt(city.status) || 0,
-      base_price: city.base_price || "",
+      // base_price: city.base_price || "",
       outstation_distance: city.outstation_distance || "",
     });
     setOpenDialog(true);
@@ -158,7 +158,8 @@ const AllRegionsCovered = () => {
       description: !descriptionRegex.test(editedCity.description), // Validate description content
       bg_image: !imageFile && !editedCity.bg_image, // Validate if image is selected
       status: !editedCity.status && editedCity.status !== 0,
-      base_price: !priceRegex.test(editedCity.base_price),
+      // base_price: !priceRegex.test(editedCity.base_price),
+      // base_price: 0,
       outstation_distance: !distanceRegex.test(editedCity.outstation_distance),
     };
 
@@ -205,7 +206,8 @@ const AllRegionsCovered = () => {
           description: editedCity.description,
           bg_image: imageUrl, // Use the uploaded or existing image URL
           status: editedCity.status,
-          base_price: editedCity.base_price,
+          // base_price: editedCity.base_price,
+          base_price: "0",
           outstation_distance: editedCity.outstation_distance,
         },
         {
@@ -245,7 +247,7 @@ const AllRegionsCovered = () => {
       pincode_until: "",
       description: "",
       bg_image: "", // Empty initial values
-      base_price: "", // Add this field
+      // base_price: "", // Add this field
       outstation_distance: "", // Add this field
     });
     setImageFile(null); // Reset image
@@ -274,7 +276,7 @@ const AllRegionsCovered = () => {
       pincode_until: !pincodeRegex.test(editedCity.pincode_until),
       description: !descriptionRegex.test(editedCity.description),
       bg_image: !imageFile && !editedCity.bg_image,
-      base_price: !priceRegex.test(editedCity.base_price), // Add this
+      // base_price: !priceRegex.test(editedCity.base_price), // Add this
       outstation_distance: !distanceRegex.test(editedCity.outstation_distance), // Add this
     };
 
@@ -316,7 +318,8 @@ const AllRegionsCovered = () => {
           pincode_until: editedCity.pincode_until,
           description: editedCity.description,
           bg_image: imageUrl,
-          base_price: editedCity.base_price, // Add this
+          // base_price: editedCity.base_price, // Add this
+          base_price: "0", // Add this
           outstation_distance: editedCity.outstation_distance, // Add this
         },
         {
@@ -551,7 +554,7 @@ const AllRegionsCovered = () => {
                             <th scope="col">City Name</th>
                             <th scope="col">Pincode</th>
                             <th scope="col">Last Updated</th>
-                            <th scope="col">Base Price</th>
+                            {/* <th scope="col">Base Price</th> */}
                             <th scope="col">Outstation Distance</th>
                             <th scope="col">Status</th>
                             <th scope="col">Actions</th>
@@ -587,7 +590,7 @@ const AllRegionsCovered = () => {
                                   )}
                                 </p>
                               </td>
-                              <td>₹{city.base_price}</td>
+                              {/* <td>₹{city.base_price}</td> */}
                               <td>{city.outstation_distance} km</td>
                               <td>
                                 <span
@@ -710,7 +713,7 @@ const AllRegionsCovered = () => {
                 error={errors.city_name} // Set error state
                 helperText={errors.city_name ? "City name is required." : ""}
               />
-              <TextField
+              {/* <TextField
                 label="Base Price (₹)"
                 fullWidth
                 margin="normal"
@@ -726,7 +729,7 @@ const AllRegionsCovered = () => {
                 InputProps={{
                   startAdornment: <span>₹</span>,
                 }}
-              />
+              /> */}
               <TextField
                 label="Outstation Distance (km)"
                 fullWidth
@@ -853,7 +856,7 @@ const AllRegionsCovered = () => {
             error={errorNewCity.city_name}
             helperText={errorNewCity.city_name ? "City name is required." : ""}
           />
-          <TextField
+          {/* <TextField
             label="Base Price (₹)"
             fullWidth
             margin="normal"
@@ -869,7 +872,7 @@ const AllRegionsCovered = () => {
             InputProps={{
               startAdornment: <span>₹</span>,
             }}
-          />
+          /> */}
           <TextField
             label="Outstation Distance (km)"
             fullWidth
