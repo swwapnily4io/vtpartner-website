@@ -330,9 +330,9 @@ const HeaderMenu = () => {
                     </span>
                   </div>
                   <div className="text-center mt-2">
-                    <h6 className="mb-0"> Shaheed Maniyar</h6>
+                    <h6 className="mb-0">Kaps Trans Pvt. Ltd.</h6>
                     <p className="f-s-12 mb-0 text-secondary">
-                      shahidmaniyar888@gmail.com
+                      kapstrans36@gmail.com
                     </p>
                   </div>
                 </li>
